@@ -1,0 +1,212 @@
+﻿<Window x:Class="Coinbase.UserPageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Coinbase"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Coinbase"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip"
+        SizeChanged="Window_SizeChanged"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F8FF"
+        Height="600" MinHeight="500"
+        Width="700" MinWidth="600">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Border -->
+        <Border Grid.Row="0"
+                Background="White"
+                MouseDown="Border_MouseDown">
+
+            <Grid HorizontalAlignment="Stretch">
+
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+
+                    <Button Width="40"
+                            Height="25"
+                            x:Name="MinimizeButton"
+                            Padding="0"
+                            Content="🗕"
+                            Background="Transparent"
+                            VerticalContentAlignment="Stretch"
+                            Foreground="DarkGray"
+                            FontWeight="UltraBold"
+                            Margin="0, 0, 0, 0"
+                            BorderThickness="0"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            Click="MinimizeButton_Click"/>
+
+                    <Button Width="40"
+                            Height="25"
+                            x:Name="WindowStateButton"
+                            Padding="0"
+                            Content="☐"
+                            Background="Transparent"
+                            Foreground="DarkGray"
+                            FontWeight="UltraBold"
+                            Margin="0, 0, 0, 0"
+                            BorderThickness="0"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            Click="WindowStateButton_Click"/>
+
+                    <Button Width="40"
+                            Height="25"
+                            x:Name="CloseButton"
+                            Padding="0"
+                            Content="✕"
+                            Background="Transparent"
+                            Foreground="DarkGray"
+                            FontWeight="UltraBold"
+                            Margin="0, 0, 0, 0"
+                            BorderThickness="0"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            Click="CloseButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!--Main Menu-->
+                <StackPanel Grid.Column="0" 
+                            Background="#F5F8FF"
+                            Width="200"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Margin="0 0 0 0">
+
+                    <TextBlock Text="Wallet App"
+                               HorizontalAlignment="Center"
+                               FontSize="24"
+                               FontWeight="Bold"
+                               FontFamily="JetBrainsMono Nerd Font"
+                               Margin="0 20 0 60"/>
+
+                    <Button x:Name="ProfileButton"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            FontFamily="JetBrainsMono Nerd Font"
+                            Foreground="#0A0B0D"
+                            Background="Transparent"
+                            Margin="0 0 0 4"
+                            Click="ProfileButton_Click">
+
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+
+                            <Image Source="src/profile.png"
+                                   Height="17"
+                                   Margin="0 0 10 0"/>
+
+                            <TextBlock Text="Profile"
+                                       VerticalAlignment="Center"
+                                       FontSize="16"/>
+
+                        </StackPanel>
+
+                    </Button>
+
+                    <Button x:Name="PaymentsButton"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            FontFamily="JetBrainsMono Nerd Font"
+                            Foreground="#0A0B0D"
+                            Background="Transparent"
+                            Margin="0 0 0 4"
+                            Click="PaymentsButton_Click">
+
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+
+                            <Image Source="src/send.png"
+                                   Height="16"
+                                   Width="17"
+                                   Margin="0 0 10 0"/>
+
+                            <TextBlock Text="Send"
+                                       VerticalAlignment="Center"
+                                       FontSize="16"/>
+
+                        </StackPanel>
+
+                    </Button>
+
+                    <Button x:Name="HistoryButton"
+                            Style="{StaticResource MaterialDesignFlatButton}"
+                            FontFamily="JetBrainsMono Nerd Font"
+                            Foreground="#0A0B0D"
+                            Background="Transparent"
+                            Click="HistoryButton_Click">
+
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+
+                            <Image Source="src/history.png"
+                                   Height="18"
+                                   Width="18"
+                                   Margin="0 0 10 0"/>
+
+                            <TextBlock Text="History"
+                                       VerticalAlignment="Center"
+                                       FontSize="16"/>
+
+                        </StackPanel>
+
+                    </Button>
+
+                </StackPanel>
+
+                <Button x:Name="AccountExitButton"
+                        Style="{StaticResource MaterialDesignFlatButton}"
+                        FontFamily="JetBrainsMono Nerd Font"
+                        Foreground="#0A0B0D"
+                        Background="Transparent"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Width="200"
+                        Margin="0 0 0 10"
+                        Click="AccountExitButton_Click">
+
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center">
+
+                        <Image Source="src/exit.png"
+                               Height="16"
+                               Width="16"
+                               Margin="0 0 10 0"/>
+
+                        <TextBlock Text="Log Out"
+                                   VerticalAlignment="Center"
+                                   FontSize="16"/>
+
+                    </StackPanel>
+                    
+                </Button>
+
+                <Frame x:Name="UserPageFrame"
+                       NavigationUIVisibility="Hidden"
+                       Background="#F3F1F9"
+                       Grid.Column="1"/>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

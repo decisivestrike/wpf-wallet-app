@@ -1,0 +1,57 @@
+﻿<Page x:Class="Coinbase.PaymentsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Coinbase"
+      mc:Ignorable="d" 
+      d:DesignHeight="450"
+      d:DesignWidth="400"
+      Title="PaymentsPage">
+
+    <Grid>
+        <Border Background="White"
+                Padding="20"
+                Width="300"
+                CornerRadius="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30"
+                                  Color="LightGray"
+                                  ShadowDepth="0"/>
+            </Border.Effect>
+
+            <StackPanel>
+                <TextBlock Text="Transaction"
+                           FontWeight="Bold"
+                           FontSize="24"
+                           FontFamily="JetBrainsMono Nerd Font"/>
+
+                <TextBox x:Name="NicknameTextBox" 
+                         FontSize="16"
+                         materialDesign:HintAssist.Hint="Reciever Name"
+                         FontFamily="JetBrainsMono Nerd Font"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+
+                <TextBox x:Name="AmountTextBox" 
+                         FontSize="16"
+                         materialDesign:HintAssist.Hint="Amount"
+                         FontFamily="JetBrainsMono Nerd Font"
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+
+                <Button x:Name="SendButton"
+                        FontSize="16"
+                        Content="Send"
+                        FontFamily="JetBrainsMono Nerd Font"
+                        Background="#0052FF"
+                        Margin="0 20 0 0"
+                        Click="SendButton_Click"/>
+
+            </StackPanel>
+
+        </Border>
+    </Grid>
+</Page>

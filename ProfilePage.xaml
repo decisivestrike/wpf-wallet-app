@@ -1,0 +1,81 @@
+﻿<Page x:Class="Coinbase.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Coinbase"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="400"
+      Title="ProfilePage">
+
+    <Grid>
+        <Border Background="White"
+                Width="300"
+                CornerRadius="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30"
+                          Color="LightGray"
+                          ShadowDepth="0"/>
+            </Border.Effect>
+
+            <StackPanel>
+                <Image Source="/src/empty.jpg"
+                       x:Name="SelfImage"
+                       Height="200"
+                       Width="200"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Center"
+                       Margin="0 30 0 0"/>
+
+                <TextBlock x:Name="Nickname_TextBlock"
+                           Background="White"
+                           Text="Name"
+                           FontFamily="JetBrainsMono Nerd Font"
+                           Style="{StaticResource MaterialDesignTextBlock}"
+                           FontSize="16"
+                           Margin="40 10 10 0"/>
+
+                <TextBlock x:Name="Email_TextBlock"
+                           Background="White"
+                           FontFamily="JetBrainsMono Nerd Font"
+                           FontSize="16"
+                           Margin="40 0 10 0"
+                           Text="E-mail"
+                           Style="{StaticResource MaterialDesignTextBlock}"/>
+
+                <StackPanel Orientation="Horizontal"
+                            Margin="40 0 0 5"
+                            HorizontalAlignment="Left">
+
+                    <TextBlock x:Name="Label"
+                               Text="Balance: "
+                               FontSize="16"
+                               Style="{StaticResource MaterialDesignTextBlock}"
+                               FontFamily="JetBrainsMono Nerd Font"
+                               Foreground="Black"/>
+
+                    <TextBlock x:Name="Money_TextBlock"
+                               Text="000000$"
+                               FontSize="16"
+                               FontWeight="Bold"
+                               Style="{StaticResource MaterialDesignTextBlock}"
+                               FontFamily="JetBrainsMono Nerd Font"
+                               Foreground="Green"/>
+                </StackPanel>
+
+                <Button x:Name="AddMoneyButton"
+                        Background="White"
+                        Foreground="White"
+                        Height="10"
+                        Width="100"
+                        Margin="0 0 0 5"
+                        Click="AddMoneyButton_Click"
+                        Style="{StaticResource MaterialDesignFlatButton}"/>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

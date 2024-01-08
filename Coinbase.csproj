@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="src\background.jpg" />
+    <None Remove="src\empty.jpg" />
+    <None Remove="src\exit.png" />
+    <None Remove="src\history.png" />
+    <None Remove="src\profile.png" />
+    <None Remove="src\send.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="src\background.jpg" />
+    <Resource Include="src\empty.jpg" />
+    <Resource Include="src\exit.png" />
+    <Resource Include="src\history.png" />
+    <Resource Include="src\profile.png" />
+    <Resource Include="src\send.png" />
+  </ItemGroup>
+
+</Project>
