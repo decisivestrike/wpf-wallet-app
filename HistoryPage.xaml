@@ -8,12 +8,12 @@
       mc:Ignorable="d" 
       d:DesignHeight="460" d:DesignWidth="360"
       Title="HistoryPage">
-
+    
     <Grid>
-        <Border Background="White"
+        <Border Background="#F5F8FF"
                 Padding="20"
                 Width="auto"
-                Height="400"
+                Height="430"
                 CornerRadius="20"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center">
@@ -32,38 +32,50 @@
                            FontSize="24"
                            Margin="0 0 0 10"/>
 
-                <!--<ScrollViewer MaxHeight="320"
+                <ScrollViewer MinHeight="347"
+                              Height="347"
                               CanContentScroll="True"
                               Style="{StaticResource MaterialDesignScrollViewer}">
 
-                    <ListView x:Name="LogsListView"
-                              Padding="10"
-                              FontFamily="JetBrainsMono Nerd Font"
-                              FontSize="16"
-                              Foreground="#0A0B0D"
-                              ItemContainerStyle="{StaticResource MaterialDesignChoiceChipSecondaryOutlineListBoxItem}"
-                              Style="{StaticResource MaterialDesignCardsListBox}">
-                    </ListView>
+                    <ListBox x:Name="LogsListBox"
+                             Style="{StaticResource MaterialDesignCardsListBox}"
+                             ItemContainerStyle="{StaticResource MaterialDesignCardsListBoxItem}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Height="50" 
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center">
 
-                </ScrollViewer>-->
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
 
-                <ListBox x:Name="LogsListBox">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel x:Name="FirstSP">
-                                <Border Background="Black"
-                                        Width="10"
-                                        Height="10"/>
-                                <TextBlock x:Name="FirstTB" Text="{Binding Path=SenderName}"/>
-                                <TextBlock Text="{Binding Path=RecieverName}"/>
-                                <TextBlock Text="{Binding Path=Amount}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                                    <Image Grid.Column="0"
+                                           x:Name="listBoxImage"
+                                           Source="src/send.png"
+                                           Width="24"
+                                           Margin="0 0 10 0"/>
+
+                                    <StackPanel Grid.Column="1"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center">
+                                        <TextBlock Text="{Binding Key}"
+                                               FontFamily="JetBrainsMono Nerd Font"
+                                               FontSize="16"
+                                               FontWeight="Bold"/>
+
+                                        <TextBlock Text="{Binding Value}"
+                                               FontFamily="JetBrainsMono Nerd Font"
+                                               FontSize="16"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
 
             </StackPanel>
-
         </Border>
     </Grid>
 </Page>

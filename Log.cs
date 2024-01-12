@@ -27,9 +27,17 @@ namespace Coinbase
             DateTime = dateTime;
         }
 
-        public override string ToString()
+        public string ToString(string username)
         {
-            return $"{SenderName} -> {RecieverName}({Amount}$) {DateTime}";
+            if (username == SenderName)
+            {
+                return $"Send {Amount}$ to '{RecieverName}'";
+            }
+            else if (username == RecieverName)
+            {
+                return $"Received {Amount}$ from '{RecieverName}'";
+            }
+            return username;
         }
     }
 }
