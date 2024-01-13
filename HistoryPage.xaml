@@ -19,9 +19,9 @@
                 VerticalAlignment="Center">
 
             <Border.Effect>
-                <DropShadowEffect BlurRadius="30"
+                <DropShadowEffect BlurRadius="10"
                                   Color="LightGray"
-                                  ShadowDepth="0"/>
+                                  ShadowDepth="3"/>
             </Border.Effect>
 
             <StackPanel>
@@ -32,7 +32,8 @@
                            FontSize="24"
                            Margin="0 0 0 10"/>
 
-                <ScrollViewer MinHeight="347"
+                <ScrollViewer x:Name="Scroll"
+                              MinHeight="347"
                               Height="347"
                               CanContentScroll="True"
                               Style="{StaticResource MaterialDesignScrollViewer}">
@@ -74,6 +75,17 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </ScrollViewer>
+
+                <Border x:Name="Nothing"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Height="340">
+                    <TextBlock Text="There's nothing here :("
+                               FontSize="16"
+                               FontFamily="JetBrainsMono Nerd Font"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Border>
 
             </StackPanel>
         </Border>

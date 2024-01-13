@@ -35,7 +35,7 @@ namespace Coinbase
             }
             else if (username == RecieverName)
             {
-                return $"Received {Amount}$ from '{RecieverName}'";
+                return $"Received {Amount}$ from '{SenderName}'";
             }
             return username;
         }

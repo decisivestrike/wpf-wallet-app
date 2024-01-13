@@ -16,9 +16,9 @@
                 VerticalAlignment="Center">
 
             <Border.Effect>
-                <DropShadowEffect BlurRadius="30"
-                          Color="LightGray"
-                          ShadowDepth="0"/>
+                <DropShadowEffect BlurRadius="10"
+                                  Color="LightGray"
+                                  ShadowDepth="3"/>
             </Border.Effect>
 
             <StackPanel>

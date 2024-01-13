@@ -19,9 +19,9 @@
                 VerticalAlignment="Center">
 
             <Border.Effect>
-                <DropShadowEffect BlurRadius="30"
+                <DropShadowEffect BlurRadius="10"
                                   Color="LightGray"
-                                  ShadowDepth="0"/>
+                                  ShadowDepth="3"/>
             </Border.Effect>
 
             <StackPanel>
@@ -46,6 +46,7 @@
                         FontSize="16"
                         Content="Send"
                         FontFamily="JetBrainsMono Nerd Font"
+                        materialDesign:ButtonAssist.CornerRadius="10"
                         Background="#0052FF"
                         Margin="0 20 0 0"
                         Click="SendButton_Click"/>

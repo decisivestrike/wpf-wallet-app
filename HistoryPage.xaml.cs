@@ -37,22 +37,27 @@ namespace Coinbase
             _logs = _context.Logs.Where(
                 l => l.SenderName == _user.Nickname || l.RecieverName == _user.Nickname).ToList();
 
-            if (_history.Count < _logs.Count)
+            if (_logs.Count == 0)
             {
+                Scroll.Visibility = System.Windows.Visibility.Collapsed;
+
+                Nothing.Visibility = System.Windows.Visibility.Visible;
+
+                LogsListBox.ItemsSource = new List<Data> { new Data("There's nothing here :(", string.Empty) };
+            }
+            else if (_history.Count < _logs.Count)
+            {
+                Scroll.Visibility = System.Windows.Visibility.Visible;
+
+                Nothing.Visibility = System.Windows.Visibility.Collapsed;
+
                 for (int i = _history.Count; i < _logs.Count; i++)
                 {
                     _history.Add(new Data(_logs[i].ToString(_user.Nickname), _logs[i].DateTime));
                 }
             }
 
-            if (_history.Count == 0)
-            {
-                LogsListBox.ItemsSource = new List<string> { "There's nothing here :(" };
-            }
-            else
-            {
-                LogsListBox.ItemsSource = _history;
-            }
+            LogsListBox.ItemsSource = _history;
         }
     }
 }
